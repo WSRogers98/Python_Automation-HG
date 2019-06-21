@@ -227,6 +227,8 @@ def txtsearch1():
     global txt1
     global Boolpdf1
     global Booltxt1
+    global Boolpdf0
+    global Booltxt0
     global pdfDis
     global txtDis
     global warning
@@ -254,6 +256,10 @@ def neighbortest():
     global Name0
     global Name1
     global boolRun
+    global Boolpdf1
+    global Booltxt1
+    global Boolpdf0
+    global Booltxt0
 
     if BoolNeighbor:
         Neighbor0.destroy()
@@ -288,6 +294,10 @@ def nameonpagetest():
     global Name0
     global Name1
     global boolRun
+    global Boolpdf1
+    global Booltxt1
+    global Boolpdf0
+    global Booltxt0
 
     if BoolNeighbor:
         Neighbor0.destroy()
