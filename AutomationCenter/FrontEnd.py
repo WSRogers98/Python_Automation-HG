@@ -390,6 +390,11 @@ def emailfunction():
     global Neighbor1
     global Name0
     global Name1
+    global boolRun
+    global Boolpdf1
+    global Booltxt1
+    global Boolpdf0
+    global Booltxt0
 
     if not email:
         if direct:
@@ -404,6 +409,23 @@ def emailfunction():
                 Name1.pack_forget()
                 BoolName = False
             direct = False
+            if Boolpdf1:
+                warning.pack_forget()
+                pdfDis.destroy()
+                Boolpdf1 = False
+            if Boolpdf0:
+                warning.pack_forget()
+                pdfDis.destroy()
+                Boolpdf0 = False
+            if boolRun:
+                runButton.destroy()
+                boolRun = False
+            if Booltxt0:
+                txtDis.destroy()
+                Booltxt0 = False
+                if Booltxt1:
+                    txtDis.destroy()
+                    Booltxt1 = False
         if bies:
             BiesButton0.destroy()
             BiesButton1.destroy()
@@ -440,6 +462,11 @@ def biesfunction():
     global Neighbor1
     global Name0
     global Name1
+    global boolRun
+    global Boolpdf1
+    global Booltxt1
+    global Boolpdf0
+    global Booltxt0
 
     if not bies:
         if email:
@@ -457,6 +484,23 @@ def biesfunction():
                 Name0.pack_forget()
                 Name1.pack_forget()
                 BoolName = False
+            if Boolpdf1:
+                warning.pack_forget()
+                pdfDis.destroy()
+                Boolpdf1 = False
+            if Boolpdf0:
+                warning.pack_forget()
+                pdfDis.destroy()
+                Boolpdf0 = False
+            if boolRun:
+                runButton.destroy()
+                boolRun = False
+            if Booltxt0:
+                txtDis.destroy()
+                Booltxt0 = False
+                if Booltxt1:
+                    txtDis.destroy()
+                    Booltxt1 = False
             direct = False
         BiesButton0 = Radiobutton(window, variable=v, value=2, text="Placeholder 2")
         BiesButton1 = Radiobutton(window, variable=v, value=3, text="Placeholder 3")
