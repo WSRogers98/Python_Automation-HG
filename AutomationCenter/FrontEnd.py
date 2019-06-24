@@ -575,6 +575,11 @@ def listsearch():
 
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
     csvlist = window.fileName
+    if list != "":
+        boollist = True
+        listdis = Label(window, text="List/.csv= "+list)
+        listdis.pack()
+        bieschecker()
 
 
 def reportsearch():
@@ -597,6 +602,11 @@ def reportsearch():
 
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the report file", filetypes=[("pdf files", "*.xlsx")])
     report = window.fileName
+    if report != "":
+        boolreport = True
+        reportdis = Label(window, text="Report/.xlsx= "+report)
+        reportdis.pack()
+        bieschecker()
 
 
 def logsearchih():
@@ -649,6 +659,11 @@ def listsearchih():
 
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
     csvlist = window.fileName
+    if listih != "":
+        boollog = True
+        logdis = Label(window, text="List/.csv= "+listih)
+        listdis.pack()
+        bieschecker()
 
 
 def bieslauncher():
