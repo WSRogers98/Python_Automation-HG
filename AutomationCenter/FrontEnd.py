@@ -76,7 +76,7 @@ def submit():
         main2(txt1, pdf1)
 
 
-def checker():
+def directchecker():
     global Booltxt0
     global Boolpdf0
     global BoolNeighbor
@@ -175,7 +175,7 @@ def pdfsearch0():
         Boolpdf0 = True
         pdfDis = Label(window, text=".pdf= "+pdf0)
         pdfDis.pack()
-        checker()
+        directchecker()
 
 
 def pdfsearch1():
@@ -201,7 +201,7 @@ def pdfsearch1():
         Boolpdf1 = True
         pdfDis = Label(window, text=".pdf= "+pdf1)
         pdfDis.pack()
-        checker()
+        directchecker()
 
 
 def txtsearch0():
@@ -227,7 +227,7 @@ def txtsearch0():
         Booltxt0 = True
         txtDis = Label(window, text=".txt= "+txt0)
         txtDis.pack()
-        checker()
+        directchecker()
 
 
 def txtsearch1():
@@ -252,7 +252,7 @@ def txtsearch1():
         Booltxt1 = True
         txtDis = Label(window, text=".txt= "+txt1)
         txtDis.pack()
-        checker()
+        directchecker()
 
 
 def neighbortest():
