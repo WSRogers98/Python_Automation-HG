@@ -75,6 +75,8 @@ def submit():
     if BoolName:
         main2(txt1, pdf1)
 
+# end general use section
+
 
 def directchecker():
     global Booltxt0
@@ -149,7 +151,6 @@ def directchecker():
             warning = Label(window, text="Missing .txt file, please upload it.", fg="red")
             warning.pack()
             Boolwarning = True
-# end general use section
 
 
 def pdfsearch0():
