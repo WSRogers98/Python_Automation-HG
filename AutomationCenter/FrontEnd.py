@@ -490,23 +490,23 @@ def emailfunction():
 
 
 def logsearch():
-    placeholder=None
+    window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the log file", filetypes=[("pdf files", "*.log")])
 
 
 def listsearch():
-    placeholder = None
+    window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
 
 
 def reportsearch():
-    placeholder = None
+    window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the report file", filetypes=[("pdf files", "*.xlsx")])
 
 
 def logsearchih():
-    placeholder = None
+    window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the log file", filetypes=[("pdf files", "*.log")])
 
 
 def listsearchih():
-    placeholder = None
+    window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
 
 
 def bieslauncher():
