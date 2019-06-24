@@ -51,8 +51,17 @@ boolRun = None
 bieslistbutton = Button
 biesreportbutton = Button
 bieslogbutton = Button
+clinkbutton = Button
+boolclink = None
 boolbies = None
 boolIHbies = None
+boollog = None
+boollist = None
+boolreport = None
+clink = ""
+csvlist = ""
+report = ""
+log = ""
 # PDF/TXT Search Variables/Buttons
 txt0 = ""
 txt1 = ""
@@ -490,32 +499,127 @@ def emailfunction():
 # end of email section
 
 
+def clinkupload():
+    global warning
+    global Boolwarning
+    global log
+    global report
+    global csvlist
+    global clink
+    global boolclink
+    global boolbies
+    global boolIHbies
+    global boollog
+    global boollist
+    global boolreport
+
+
 def logsearch():
+    global warning
+    global Boolwarning
+    global log
+    global report
+    global csvlist
+    global clink
+    global boolclink
+    global boolbies
+    global boolIHbies
+    global boollog
+    global boollist
+    global boolreport
+
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the log file", filetypes=[("pdf files", "*.log")])
+    log = window.fileName
 
 
 def listsearch():
+    global warning
+    global Boolwarning
+    global log
+    global report
+    global csvlist
+    global clink
+    global boolclink
+    global boolbies
+    global boolIHbies
+    global boollog
+    global boollist
+    global boolreport
+
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
+    csvlist = window.fileName
 
 
 def reportsearch():
+    global warning
+    global Boolwarning
+    global log
+    global report
+    global csvlist
+    global clink
+    global boolclink
+    global boolbies
+    global boolIHbies
+    global boollog
+    global boollist
+    global boolreport
+
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the report file", filetypes=[("pdf files", "*.xlsx")])
+    report = window.fileName
 
 
 def logsearchih():
+    global warning
+    global Boolwarning
+    global log
+    global report
+    global csvlist
+    global clink
+    global boolclink
+    global boolbies
+    global boolIHbies
+    global boollog
+    global boollist
+    global boolreport
+
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the log file", filetypes=[("pdf files", "*.log")])
+    log = window.fileName
 
 
 def listsearchih():
+    global warning
+    global Boolwarning
+    global log
+    global report
+    global csvlist
+    global clink
+    global boolclink
+    global boolbies
+    global boolIHbies
+    global boollog
+    global boollist
+    global boolreport
+
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
+    csvlist = window.fileName
 
 
 def bieslauncher():
     global bieslistbutton
     global bieslogbutton
     global biesreportbutton
+    global warning
+    global Boolwarning
+    global log
+    global report
+    global csvlist
+    global clink
+    global boolclink
     global boolbies
     global boolIHbies
+    global boollog
+    global boollist
+    global boolreport
 
     if boolbies:
         biesreportbutton.destroy()
@@ -541,8 +645,18 @@ def ihbieslauncher():
     global bieslistbutton
     global bieslogbutton
     global biesreportbutton
+    global warning
+    global Boolwarning
+    global log
+    global report
+    global csvlist
+    global clink
+    global boolclink
     global boolbies
     global boolIHbies
+    global boollog
+    global boollist
+    global boolreport
 
     if boolbies:
         biesreportbutton.destroy()
