@@ -507,6 +507,7 @@ def emailfunction():
 
 def bieschecker():
     global warning
+    global runButton
     global Boolwarning
     global log
     global report
@@ -524,8 +525,69 @@ def bieschecker():
     global clinkdis
 
     if boolbies:
-        if boollist:
-            placeholder = None
+        if boolreport and boollog and boolclink and boollist:
+            runButton = Button(window, text="Run Test", command=partial(submit))
+        elif boollist:
+            if not boolclink and not boollog and not boolreport:
+                warning = Label(window, text="Missing log, report and Clink link. Please upload them.", fg="red")
+            elif not boolclink and not boollog:
+                warning = Label(window, text="Missing log and Clink link. Please upload them.", fg="red")
+            elif not boolclink and not boolreport:
+                warning = Label(window, text="Missing report and Clink link. Please upload them.", fg="red")
+            elif not report and not boollog:
+                warning = Label(window, text="Missing log and report. Please upload them.", fg="red")
+            elif not boolclink:
+                warning = Label(window, text="Missing Clink link. Please upload it.", fg="red")
+            elif not boolreport:
+                warning = Label(window, text="Missing report. Please upload it.", fg="red")
+            elif not boollog:
+                warning = Label(window, text="Missing log. Please upload it.", fg="red")
+        elif boolreport:
+            if not boolclink and not boollog and not boollist:
+                warning = Label(window, text="Missing log, list and Clink link. Please upload them.", fg="red")
+            elif not boolclink and not boollog:
+                warning = Label(window, text="Missing log and Clink link. Please upload them.", fg="red")
+            elif not boolclink and not boollist:
+                warning = Label(window, text="Missing list and Clink link. Please upload them.", fg="red")
+            elif not boollog and not boollist:
+                warning = Label(window, text="Missing list and log. Please upload them.", fg="red")
+            elif not boolclink:
+                warning = Label(window, text="Missing Clink link. Please upload it.", fg="red")
+            elif not boollog:
+                warning = Label(window, text="Missing log. Please upload it.", fg="red")
+            elif not boollist:
+                warning = Label(window, text="Missing list. Please upload it.", fg="red")
+        elif boollog:
+            if not boolclink and not boolreport and not boollist:
+                warning = Label(window, text="Missing report, list and Clink link. Please upload them.", fg="red")
+            elif not boolclink and not boollist:
+                warning = Label(window, text="Missing list and Clink link. Please upload them.", fg="red")
+            elif not boolclink and not boolreport:
+                warning = Label(window, text="Missing report and Clink link. Please upload them.", fg="red")
+            elif not boollist and not boolreport:
+                warning = Label(window, text="Missing report and list. Please upload them.", fg="red")
+            elif not boolclink:
+                warning = Label(window, text="Missing Clink link. Please upload it.", fg="red")
+            elif not boolreport:
+                warning = Label(window, text="Missing report. Please upload it.", fg="red")
+            elif not boollist:
+                warning = Label(window, text="Missing list. Please upload it.", fg="red")
+        elif clink:
+            if not boollog and not boolreport and not boollist:
+                warning = Label(window, text="Missing report, list and log. Please upload them.", fg="red")
+            elif not boollist and not boolreport:
+                warning = Label(window, text="Missing report and list. Please upload them.", fg="red")
+            elif not boollog and not boollist:
+                warning = Label(window, text="Missing list and log. Please upload them.", fg="red")
+            elif not report and not boollog:
+                warning = Label(window, text="Missing log and report. Please upload them.", fg="red")
+            elif not boolreport:
+                warning = Label(window, text="Missing report. Please upload it.", fg="red")
+            elif not boollist:
+                warning = Label(window, text="Missing list. Please upload it.", fg="red")
+            elif not boollog:
+                warning = Label(window, text="Missing log. Please upload it.", fg="red")
+
     if boolIHbies:
         Placeholder = None
 
