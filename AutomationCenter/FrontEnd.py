@@ -523,70 +523,214 @@ def bieschecker():
     global reportdis
     global listdis
     global clinkdis
+    global boolRun
 
     if boolbies:
         if boolreport and boollog and boolclink and boollist:
+            warning.pack_forget()
+            if boolRun:
+                runButton.destroy()
+                boolRun = False
             runButton = Button(window, text="Run Test", command=partial(submit))
+            runButton.pack()
+            boolRun = True
         elif boollist:
             if not boolclink and not boollog and not boolreport:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing log, report and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolclink and not boollog:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing log and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolclink and not boolreport:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing report and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not report and not boollog:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing log and report. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolclink:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing Clink link. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolreport:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing report. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boollog:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing log. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
         elif boolreport:
             if not boolclink and not boollog and not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing log, list and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolclink and not boollog:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing log and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolclink and not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing list and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boollog and not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing list and log. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolclink:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing Clink link. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boollog:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing log. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing list. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
         elif boollog:
             if not boolclink and not boolreport and not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing report, list and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolclink and not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing list and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolclink and not boolreport:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing report and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boollist and not boolreport:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing report and list. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolclink:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing Clink link. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolreport:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing report. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing list. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
         elif clink:
             if not boollog and not boolreport and not boollist:
                 warning = Label(window, text="Missing report, list and log. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boollist and not boolreport:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing report and list. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boollog and not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing list and log. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not report and not boollog:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing log and report. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boolreport:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing report. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing list. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
             elif not boollog:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
                 warning = Label(window, text="Missing log. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
 
     if boolIHbies:
         Placeholder = None
