@@ -62,6 +62,12 @@ clink = ""
 csvlist = ""
 report = ""
 log = ""
+logih = ""
+listih = ""
+logdis = Label
+listdis = Label
+reportdis = Label
+clinkdis = Label
 # PDF/TXT Search Variables/Buttons
 txt0 = ""
 txt1 = ""
@@ -499,6 +505,10 @@ def emailfunction():
 # end of email section
 
 
+def bieschecker():
+    placeholder = None
+
+
 def clinkupload():
     global warning
     global Boolwarning
@@ -512,6 +522,10 @@ def clinkupload():
     global boollog
     global boollist
     global boolreport
+    global logdis
+    global reportdis
+    global listdis
+    global clinkdis
 
 
 def logsearch():
@@ -527,9 +541,18 @@ def logsearch():
     global boollog
     global boollist
     global boolreport
+    global logdis
+    global reportdis
+    global listdis
+    global clinkdis
 
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the log file", filetypes=[("pdf files", "*.log")])
     log = window.fileName
+    if log != "":
+        boollog = True
+        logdis = Label(window, text=".log= "+log)
+        logdis.pack()
+        bieschecker()
 
 
 def listsearch():
@@ -545,6 +568,10 @@ def listsearch():
     global boollog
     global boollist
     global boolreport
+    global logdis
+    global reportdis
+    global listdis
+    global clinkdis
 
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
     csvlist = window.fileName
@@ -563,6 +590,10 @@ def reportsearch():
     global boollog
     global boollist
     global boolreport
+    global logdis
+    global reportdis
+    global listdis
+    global clinkdis
 
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the report file", filetypes=[("pdf files", "*.xlsx")])
     report = window.fileName
@@ -571,6 +602,7 @@ def reportsearch():
 def logsearchih():
     global warning
     global Boolwarning
+    global logih
     global log
     global report
     global csvlist
@@ -581,15 +613,26 @@ def logsearchih():
     global boollog
     global boollist
     global boolreport
+    global logdis
+    global reportdis
+    global listdis
+    global clinkdis
 
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the log file", filetypes=[("pdf files", "*.log")])
-    log = window.fileName
+    logih = window.fileName
+    if logih != "":
+        boollog = True
+        logdis = Label(window, text=".log= "+logih)
+        logdis.pack()
+        bieschecker()
 
 
 def listsearchih():
     global warning
     global Boolwarning
     global log
+    global logih
+    global listih
     global report
     global csvlist
     global clink
@@ -599,6 +642,10 @@ def listsearchih():
     global boollog
     global boollist
     global boolreport
+    global logdis
+    global reportdis
+    global listdis
+    global clinkdis
 
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
     csvlist = window.fileName
