@@ -506,7 +506,27 @@ def emailfunction():
 
 
 def bieschecker():
-    placeholder = None
+    global warning
+    global Boolwarning
+    global log
+    global report
+    global csvlist
+    global clink
+    global boolclink
+    global boolbies
+    global boolIHbies
+    global boollog
+    global boollist
+    global boolreport
+    global logdis
+    global reportdis
+    global listdis
+    global clinkdis
+
+    if boolbies:
+        Placeholder = None
+    if boolIHbies:
+        Placeholder = None
 
 
 def clinkupload():
