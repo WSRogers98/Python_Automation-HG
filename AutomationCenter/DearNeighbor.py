@@ -1,5 +1,3 @@
-#from FrontEnd import *
-#import FrontEnd as f
 import re
 from io import StringIO
 from tkinter import *
@@ -150,7 +148,7 @@ def records_in_text_file():
 
 
 def main1(textinput, pdfinput):
-   # start_time = time.time()
+
     global txt00
     global pdf00
     txt00 = textinput
@@ -167,25 +165,16 @@ def main1(textinput, pdfinput):
         text_value = [x.upper() for x in text_dict[key]]
         if pdf_value == text_value:
             count += 1
-            # print()
             Label(resultwindow, text=key + " from pdf file " + str(pdf_dict[key])).grid(row=count1, column=0)
             Label(resultwindow, text="MATCHED", fg="green").grid(row=count1, column=1)
             Label(resultwindow, text=key + " from text file " + str(text_dict[key])).grid(row=count1, column=2)
-            # print(key, "from pdf file", pdf_dict[key], colored("MATCHED", 'green', attrs=['bold']), key, "from text file", text_dict[key])
-            # print()
             count1 += 1
         else:
             different.add(key)
             Label(resultwindow, text=key + " from pdf file " + str(pdf_dict[key])).grid(row=count1, column=0)
             Label(resultwindow, text="DID NOT MATCH", fg="red").grid(row=count1, column=1)
             Label(resultwindow, text=key + " from text file " + str(text_dict[key])).grid(row=count1, column=2)
-            # print(key, "from pdf file", pdf_dict[key], colored("DID NOT MATCH", 'red', attrs=['bold']), key, "from text file", text_dict[key])
-            # print()
             count1 +=1
 
-    # print()
     Label(resultwindow, text="The number of records matched = ").grid(row=count1, column=0)
     Label(resultwindow, text=count, fg="blue").grid(row=count1 + 1, column=1)
-    # print("The number of records matched = ", colored(count, 'yellow',attrs=['bold']))
-    # print()
-    # print("Total time taken = ", colored(" %s seconds", 'yellow') % (time.time() - start_time))

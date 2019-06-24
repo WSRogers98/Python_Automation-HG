@@ -347,12 +347,28 @@ def directfunction():
     global Neighbor1
     global Name0
     global Name1
+    global bieslistbutton
+    global bieslogbutton
+    global biesreportbutton
+    global boolbies
+    global boolIHbies
 
     if not direct:
         if bies:
+            if boolbies:
+                biesreportbutton.destroy()
+                bieslistbutton.destroy()
+                bieslogbutton.destroy()
+                boolbies = False
+
+            if boolIHbies:
+                bieslistbutton.destroy()
+                bieslogbutton.destroy()
+                boolIHbies = False
             BiesButton0.destroy()
             BiesButton1.destroy()
             bies = False
+
         if email:
             EmailButton0.destroy()
             EmailButton1.destroy()
@@ -379,6 +395,7 @@ def directfunction():
         DirectButton0.pack()
         DirectButton1.pack()
         direct = True
+
 # end of direct mail section
 
 
@@ -403,6 +420,11 @@ def emailfunction():
     global Booltxt1
     global Boolpdf0
     global Booltxt0
+    global bieslistbutton
+    global bieslogbutton
+    global biesreportbutton
+    global boolbies
+    global boolIHbies
 
     if not email:
         if direct:
@@ -438,6 +460,17 @@ def emailfunction():
             BiesButton0.destroy()
             BiesButton1.destroy()
             bies = False
+            if boolbies:
+                biesreportbutton.destroy()
+                bieslistbutton.destroy()
+                bieslogbutton.destroy()
+                boolbies = False
+
+            if boolIHbies:
+                bieslistbutton.destroy()
+                bieslogbutton.destroy()
+                boolIHbies = False
+
         EmailButton0 = Radiobutton(window, variable=v, value=2, text="Placeholder 0")
         EmailButton1 = Radiobutton(window, variable=v, value=3, text="Placeholder 1")
         EmailButton0.pack()
@@ -452,6 +485,7 @@ def emailfunction():
         EmailButton0.pack()
         EmailButton1.pack()
         email = True
+
 # end of email section
 
 
@@ -496,6 +530,9 @@ def bieslauncher():
     bieslogbutton = Button(window, text="Upload Log", command=partial(logsearch))
     bieslistbutton = Button(window, text="Upload List", command=partial(listsearch))
     biesreportbutton = Button(window, text="Upload Report", command=partial(reportsearch))
+    bieslogbutton.pack()
+    bieslistbutton.pack()
+    biesreportbutton.pack()
     boolbies = True
 
 
@@ -517,8 +554,10 @@ def ihbieslauncher():
         bieslogbutton.destroy()
         boolIHbies = False
 
-    Button(window, text="Upload Log", command=partial(logsearchih))
-    Button(window, text="Upload List", command=partial(listsearchih))
+    bieslogbutton = Button(window, text="Upload Log", command=partial(logsearchih))
+    bieslistbutton = Button(window, text="Upload List", command=partial(listsearchih))
+    bieslistbutton.pack()
+    bieslogbutton.pack()
     boolIHbies = True
 
 
@@ -579,7 +618,7 @@ def biesfunction():
                     Booltxt1 = False
             direct = False
         BiesButton0 = Radiobutton(window, variable=v, value=2, text="BIES", command=partial(bieslauncher))
-        BiesButton1 = Radiobutton(window, variable=v, value=3, text="IH BIES",command=partial(ihbieslauncher))
+        BiesButton1 = Radiobutton(window, variable=v, value=3, text="IH BIES", command=partial(ihbieslauncher))
         BiesButton0.pack()
         BiesButton1.pack()
         bies = True
@@ -637,7 +676,7 @@ def quitprogram():
 
 
 window.geometry("600x450")
-window.title("AutomationCenter for HealthGrades 0.2")
+window.title("AutomationCenter for HealthGrades 0.3")
 Label(window, text="AutomationCenter").pack()
 Label(window, text="By Will Rogers").pack()
 Label(window, text="Select the Automation you would Like:").pack()
