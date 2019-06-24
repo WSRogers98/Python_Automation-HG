@@ -47,6 +47,12 @@ Name0 = Button
 Name1 = Button
 runButton = Button
 boolRun = None
+# Bies Automation buttons/Variables
+bieslistbutton = Button
+biesreportbutton = Button
+bieslogbutton = Button
+boolbies = None
+boolIHbies = None
 # PDF/TXT Search Variables/Buttons
 txt0 = ""
 txt1 = ""
@@ -143,6 +149,7 @@ def checker():
             warning = Label(window, text="Missing .txt file, please upload it.", fg="red")
             warning.pack()
             Boolwarning = True
+# end general use section
 
 
 def pdfsearch0():
@@ -372,6 +379,7 @@ def directfunction():
         DirectButton0.pack()
         DirectButton1.pack()
         direct = True
+# end of direct mail section
 
 
 def emailfunction():
@@ -444,6 +452,28 @@ def emailfunction():
         EmailButton0.pack()
         EmailButton1.pack()
         email = True
+# end of email section
+
+
+def bieslauncher():
+    global bieslistbutton
+    global bieslogbutton
+    global biesreportbutton
+    global boolBies
+    global boolIHbies
+    Button(window, text="Upload Log", command=partial(logsearch))
+    Button(window, text="Upload List", command=partial(listsearch))
+    Button(window, text="Upload Report", command=partial(reportsearch))
+    boolBies = True
+
+
+def ihbieslauncher():
+    global bieslistbutton
+    global bieslogbutton
+    global boolIHbies
+    Button(window, text="Upload Log", command=partial(logsearch))
+    Button(window, text="Upload List", command=partial(listsearch))
+    boolIHbies = True
 
 
 def biesfunction():
@@ -502,8 +532,8 @@ def biesfunction():
                     txtDis.destroy()
                     Booltxt1 = False
             direct = False
-        BiesButton0 = Radiobutton(window, variable=v, value=2, text="Placeholder 2")
-        BiesButton1 = Radiobutton(window, variable=v, value=3, text="Placeholder 3")
+        BiesButton0 = Radiobutton(window, variable=v, value=2, text="BIES", command=partial(bieslauncher))
+        BiesButton1 = Radiobutton(window, variable=v, value=3, text="IH BIES",command=partial(ihbieslauncher))
         BiesButton0.pack()
         BiesButton1.pack()
         bies = True
