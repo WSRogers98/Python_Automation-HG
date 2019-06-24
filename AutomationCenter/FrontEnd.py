@@ -524,7 +524,8 @@ def bieschecker():
     global clinkdis
 
     if boolbies:
-        Placeholder = None
+        if boollist:
+            placeholder = None
     if boolIHbies:
         Placeholder = None
 
