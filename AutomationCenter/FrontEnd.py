@@ -455,24 +455,70 @@ def emailfunction():
 # end of email section
 
 
+def logsearch():
+    placeholder=None
+
+
+def listsearch():
+    placeholder = None
+
+
+def reportsearch():
+    placeholder = None
+
+
+def logsearchih():
+    placeholder = None
+
+
+def listsearchih():
+    placeholder = None
+
+
 def bieslauncher():
     global bieslistbutton
     global bieslogbutton
     global biesreportbutton
-    global boolBies
+    global boolbies
     global boolIHbies
-    Button(window, text="Upload Log", command=partial(logsearch))
-    Button(window, text="Upload List", command=partial(listsearch))
-    Button(window, text="Upload Report", command=partial(reportsearch))
-    boolBies = True
+
+    if boolbies:
+        biesreportbutton.destroy()
+        bieslistbutton.destroy()
+        bieslogbutton.destroy()
+        boolbies = False
+
+    if boolIHbies:
+        bieslistbutton.destroy()
+        bieslogbutton.destroy()
+        boolIHbies = False
+
+    bieslogbutton = Button(window, text="Upload Log", command=partial(logsearch))
+    bieslistbutton = Button(window, text="Upload List", command=partial(listsearch))
+    biesreportbutton = Button(window, text="Upload Report", command=partial(reportsearch))
+    boolbies = True
 
 
 def ihbieslauncher():
     global bieslistbutton
     global bieslogbutton
+    global biesreportbutton
+    global boolbies
     global boolIHbies
-    Button(window, text="Upload Log", command=partial(logsearch))
-    Button(window, text="Upload List", command=partial(listsearch))
+
+    if boolbies:
+        biesreportbutton.destroy()
+        bieslistbutton.destroy()
+        bieslogbutton.destroy()
+        boolbies = False
+
+    if boolIHbies:
+        bieslistbutton.destroy()
+        bieslogbutton.destroy()
+        boolIHbies = False
+
+    Button(window, text="Upload Log", command=partial(logsearchih))
+    Button(window, text="Upload List", command=partial(listsearchih))
     boolIHbies = True
 
 
