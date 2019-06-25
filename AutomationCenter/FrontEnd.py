@@ -873,9 +873,9 @@ def listsearch():
 
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
     csvlist = window.fileName
-    if list != "":
+    if csvlist != "":
         boollist = True
-        listdis = Label(window, text="List/.csv= "+list)
+        listdis = Label(window, text="List/.csv= "+csvlist)
         listdis.pack()
         bieschecker()
 
@@ -956,7 +956,7 @@ def listsearchih():
     global clinkdis
 
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
-    csvlist = window.fileName
+    listih = window.fileName
     if listih != "":
         boollist = True
         logdis = Label(window, text="List/.csv= "+listih)
@@ -1164,8 +1164,8 @@ mb.menu.add_command(label="Email", command=partial(emailfunction))
 mb.menu.add_command(label="BIES", command=partial(biesfunction))
 mb.pack()
 
-lrcorner = Frame(padx=0, pady=0)
-llcorner = Frame(padx=0, pady=0)
+lrcorner = Frame(padx=1, pady=1)
+llcorner = Frame(padx=1, pady=1)
 lrcorner.pack(side="left", expand=True)
 llcorner.pack(side="right", expand=True)
 quitb = Button(llcorner, text="Quit", anchor=SW, command=partial(quitprogram))
