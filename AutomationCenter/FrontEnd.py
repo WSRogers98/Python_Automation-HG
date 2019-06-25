@@ -684,7 +684,7 @@ def bieschecker():
                 warning = Label(window, text="Missing list. Please upload it.", fg="red")
                 warning.pack()
                 Boolwarning = True
-        elif clink:
+        elif boolclink:
             if not boollog and not boolreport and not boollist:
                 warning = Label(window, text="Missing report, list and log. Please upload them.", fg="red")
                 warning.pack()
@@ -733,7 +733,78 @@ def bieschecker():
                 Boolwarning = True
 
     if boolIHbies:
-        Placeholder = None
+        if boollog and boolclink and boollist:
+            warning.pack_forget()
+            if boolRun:
+                runButton.destroy()
+                boolRun = False
+            runButton = Button(window, text="Run Test", command=partial(submit))
+            runButton.pack()
+            boolRun = True
+
+        elif boolclink:
+            if not boollog and not boollist:
+                warning = Label(window, text="Missing list and log. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
+            elif not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
+                warning = Label(window, text="Missing list. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
+            elif not boollog:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
+                warning = Label(window, text="Missing log. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
+        elif boollog:
+            if not boolclink and not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
+                warning = Label(window, text="Missing list and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
+            elif not boolclink:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
+                warning = Label(window, text="Missing Clink link. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
+            elif not boollist:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
+                warning = Label(window, text="Missing list. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
+        elif boollist:
+            if not boolclink and not boollog:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
+                warning = Label(window, text="Missing log and Clink link. Please upload them.", fg="red")
+                warning.pack()
+                Boolwarning = True
+            elif not boolclink:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
+                warning = Label(window, text="Missing Clink link. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
+            elif not boollog:
+                if Boolwarning:
+                    warning.pack_forget()
+                    Boolwarning = False
+                warning = Label(window, text="Missing log. Please upload it.", fg="red")
+                warning.pack()
+                Boolwarning = True
 
 
 def clinkupload():
@@ -887,7 +958,7 @@ def listsearchih():
     window.fileName = filedialog.askopenfilename(initialdir="/", title="Select the list file", filetypes=[("pdf files", "*.csv")])
     csvlist = window.fileName
     if listih != "":
-        boollog = True
+        boollist = True
         logdis = Label(window, text="List/.csv= "+listih)
         listdis.pack()
         bieschecker()
