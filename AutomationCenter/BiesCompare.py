@@ -31,13 +31,13 @@ with requests.session() as s:
     requrl = "https://clink.healthgrades.com/"
     req = s.get(requrl, headers=headers)
     print(req.content)
-    soupt = BeautifulSoup(req.content, "html.parser")
+    soupt = BeautifulSoup(req.content, 'html.parser')
     login_data[Login] = soupt.find('login_form')['value']
     req = s.post(requrl, data=login_data, headers=headers)
 
 url = "https://clink.healthgrades.com/clinkcounts/view.cfm?id=642025931735107374138627"
 html = urllib.request.urlopen(url).read()
-soup = BeautifulSoup(html, features="html.parser")
+soup = BeautifulSoup(html, features='html.parser')
 
 for script in soup(["script", "style"]):
     script.extract()
