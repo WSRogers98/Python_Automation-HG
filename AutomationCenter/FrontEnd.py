@@ -524,7 +524,7 @@ def bieschecker():
     global listdis
     global clinkdis
     global boolRun
-
+    # upload for Clink link still not implemented
     if boolbies:
         if boolreport and boollog and boolclink and boollist:
             warning.pack_forget()
