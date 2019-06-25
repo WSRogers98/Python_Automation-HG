@@ -8,6 +8,7 @@ from pdfminer3.layout import LAParams
 from pdfminer3.pdfpage import PDFPage
 from DearNeighbor import main1
 from NameOnPage import main2
+from BiesCompare import *
 from tkinter import filedialog
 from tkinter import *
 from functools import partial
