@@ -742,7 +742,6 @@ def bieschecker():
             runButton = Button(window, text="Run Test", command=partial(submit))
             runButton.pack()
             boolRun = True
-
         elif boolclink:
             if not boollog and not boollist:
                 warning = Label(window, text="Missing list and log. Please upload them.", fg="red")
