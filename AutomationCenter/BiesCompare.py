@@ -14,6 +14,7 @@ from pdfminer3.layout import LAParams
 from pdfminer3.pdfpage import PDFPage
 username = ""
 password = ""
+clinkurl = ""
 
 
 # Setup to read a webpage
@@ -26,8 +27,8 @@ headers = {
 }
 login_data = {
 'return_url' : '/clinkhome.cfm?',
-'loginusername' : 'will.rogers',
-'loginpassword' : 'DBD15541998es6!',
+'loginusername' : 'DummyUsr', # replace with username
+'loginpassword' : 'DummyPass', #replace with password
  'Login': 'Login'
 }
 with requests.Session() as s:
@@ -36,6 +37,8 @@ with requests.Session() as s:
     r = s.get("https://clink.healthgrades.com/clinkhome.cfm?")
     soup = BeautifulSoup(r.content, features="lxml")
     print(soup.title.text)
+    print(r.content)
+    r = s.get("https://clink.healthgrades.com/clinkcounts/view.cfm?id=642025931735107374138627") #replace with Clink URL
     print(r.content)
 
 # with requests.session() as s:
