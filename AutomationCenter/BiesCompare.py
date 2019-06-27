@@ -31,20 +31,21 @@ login_data = {
  'Login': 'Login'
 }
 with requests.Session() as s:
-    r = s.post(post, data=login_data) # log us in
-    print(r.content) # will output "successful" for correct login
-    r = s.get("https://clink.healthgrades.com/clinkhome.cfm?") # get account page
+    r = s.post(post, data=login_data)
+    print(r.content)
+    r = s.get("https://clink.healthgrades.com/clinkhome.cfm?")
     soup = BeautifulSoup(r.content, features="lxml")
     print(soup.title.text)
     print(r.content)
-#with requests.session() as s:
- #   requrl = "https://clink.healthgrades.com/"
-  #  req = s.get(requrl, headers=headers)
-   # print(req.content)
-    #soupt = BeautifulSoup(req.content, 'html.parser')
-    #login_data["Login"] = soupt.find('input', attrs={'name': "Login"})['value']
-    #req = s.post(requrl, data=login_data, headers=headers)
-    #print(req.content)
+
+# with requests.session() as s:
+#   requrl = "https://clink.healthgrades.com/"
+#  req = s.get(requrl, headers=headers)
+# print(req.content)
+# soupt = BeautifulSoup(req.content, 'html.parser')
+# login_data["Login"] = soupt.find('input', attrs={'name': "Login"})['value']
+# req = s.post(requrl, data=login_data, headers=headers)
+# print(req.content)
 
 # url = "https://clink.healthgrades.com/clinkcounts/view.cfm?id=642025931735107374138627"
 # html = urllib.request.urlopen(url).read()
