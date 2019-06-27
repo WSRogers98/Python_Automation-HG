@@ -52,7 +52,8 @@ boolRun = None
 bieslistbutton = Button
 biesreportbutton = Button
 bieslogbutton = Button
-clinkbutton = Button
+biesclinkbutton = Button
+clinkentry = Entry
 boolclink = None
 boolbies = None
 boolIHbies = None
@@ -69,6 +70,7 @@ logdis = Label
 listdis = Label
 reportdis = Label
 clinkdis = Label
+uploadlabel = Label
 # PDF/TXT Search Variables/Buttons
 txt0 = ""
 txt1 = ""
@@ -824,6 +826,21 @@ def clinkupload():
     global reportdis
     global listdis
     global clinkdis
+    global clinkentry
+    global biesclinkbutton
+    global uploadlabel
+
+    if not boolclink:
+        uploadlabel(window, text="press Upload Clink button again to Upload").pack()
+        clinkentry = Entry(window)
+        clinkentry.pack()
+        clink = clinkentry.get()
+        boolclink = True
+    else:
+        clinkentry.destroy()
+        bieschecker()
+        clinkdis = Label(window, text="Clink url= " + clink)
+        clinkdis.pack()
 
 
 def logsearch():
@@ -980,6 +997,7 @@ def bieslauncher():
     global boollog
     global boollist
     global boolreport
+    global biesclinkbutton
 
     if boolbies:
         biesreportbutton.destroy()
@@ -995,9 +1013,11 @@ def bieslauncher():
     bieslogbutton = Button(window, text="Upload Log", command=partial(logsearch))
     bieslistbutton = Button(window, text="Upload List", command=partial(listsearch))
     biesreportbutton = Button(window, text="Upload Report", command=partial(reportsearch))
+    biesclinkbutton = Button(window, text="Upload Clink Link", command=partial(clinkupload))
     bieslogbutton.pack()
     bieslistbutton.pack()
     biesreportbutton.pack()
+    biesclinkbutton.pack()
     boolbies = True
 
 
@@ -1017,6 +1037,7 @@ def ihbieslauncher():
     global boollog
     global boollist
     global boolreport
+    global biesclinkbutton
 
     if boolbies:
         biesreportbutton.destroy()
@@ -1031,8 +1052,10 @@ def ihbieslauncher():
 
     bieslogbutton = Button(window, text="Upload Log", command=partial(logsearchih))
     bieslistbutton = Button(window, text="Upload List", command=partial(listsearchih))
+    biesclinkbutton = Button(window, text="Upload Clink Link", command=partial(clinkupload))
     bieslistbutton.pack()
     bieslogbutton.pack()
+    biesclinkbutton.pack()
     boolIHbies = True
 
 

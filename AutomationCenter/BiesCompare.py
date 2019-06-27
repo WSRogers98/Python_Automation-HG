@@ -6,7 +6,6 @@ import requests
 import math
 from bs4 import BeautifulSoup
 import urllib
-import selenium
 from io import StringIO
 from pdfminer3.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer3.converter import TextConverter
