@@ -41,6 +41,7 @@ with requests.Session() as s:
     text.close()
     print(r.content)
 
+
 # with requests.session() as s:
 #   requrl = "https://clink.healthgrades.com/"
 #  req = s.get(requrl, headers=headers)
