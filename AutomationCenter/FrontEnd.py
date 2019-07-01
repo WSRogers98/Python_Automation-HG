@@ -1158,7 +1158,7 @@ def helpme():
     Label(helpwindow, text="Welcome to the Healthgrades AutomationCenter 0.2", wraplength=599, justify=LEFT, anchor=W).grid(row=0, column=0)
     Label(helpwindow, text="This program was created by William Rogers, a quality assurance intern.", wraplength=599, justify=LEFT, anchor=W).grid(row=1, column=0)
     Label(helpwindow, text=" ", wraplength=599, justify=LEFT, anchor=W).grid(row=2, column=0)
-    Label(helpwindow, text="• While this intern has never made a GUI before, has never used Python and barely knows how this works, he will do his best to walk you through it in this help section.", wraplength=599, justify=LEFT, anchor=W).grid(row=3, column=0)
+ #   Label(helpwindow, text="• While this intern has never made a GUI before, has never used Python and barely knows how this works, he will do his best to walk you through it in this help section.", wraplength=599, justify=LEFT, anchor=W).grid(row=3, column=0)
     Label(helpwindow, text="• To get started, use the dropdown menu to select what QA type you are doing. Currently, only automation for DirectMail is available.", wraplength=599, justify=LEFT, anchor=W).grid(row=5, column=0)
     Label(helpwindow, text="• This will then present you with the buttons to select what autmation you need for this QA. If the button appears clicked when you first see the option you still have to click it again.", wraplength=599, justify=LEFT, anchor=W).grid(row=7, column=0)
     Label(helpwindow, text="• You will then be presented with buttons to upload the files needed for this QA automation. Please upload all files asked for in order to continue.", wraplength=599, justify=LEFT, anchor=W).grid(row=9, column=0)

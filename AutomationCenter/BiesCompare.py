@@ -26,18 +26,19 @@ headers = {
 }
 login_data = {
 'return_url' : '/clinkhome.cfm?',
-'loginusername' : 'DummyUsr', # replace with username
-'loginpassword' : 'DummyPass', #replace with password
+'loginusername' : 'dummy',  # replace with username
+'loginpassword' : 'dummy',  # replace with password
  'Login': 'Login'
 }
 with requests.Session() as s:
     r = s.post(post, data=login_data)
     print(r.content)
-    r = s.get("https://clink.healthgrades.com/clinkhome.cfm?")
+    r = s.get("https://clink.healthgrades.com/clinkcounts/view.cfm?id=642025931735107374138627")
     soup = BeautifulSoup(r.content, features="lxml")
     print(soup.title.text)
-    print(r.content)
-    r = s.get("https://clink.healthgrades.com/clinkcounts/view.cfm?id=642025931735107374138627") #replace with Clink URL
+    text = open("webdata.txt", "w")
+    text.write(r.text)
+    text.close()
     print(r.content)
 
 # with requests.session() as s:
