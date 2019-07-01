@@ -37,7 +37,7 @@ with requests.Session() as s:
     soup = BeautifulSoup(r.content, features="lxml")
     print(soup.title.text)
     text = open("webdata.txt", "w")
-    text.write(r.text)
+    text.write(str(r.content))
     text.close()
     print(r.content)
 
