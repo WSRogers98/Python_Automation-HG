@@ -22,6 +22,7 @@ import tkinter as tk
 # Global Variables
 helpwindow = tk
 bugwindow = tk
+top = tk
 window = tk.Tk()
 v = tk.IntVar()
 quitb = Button
@@ -66,6 +67,8 @@ report = ""
 log = ""
 logih = ""
 listih = ""
+password = ""
+username = ""
 logdis = Label
 listdis = Label
 reportdis = Label
@@ -811,6 +814,8 @@ def bieschecker():
 
 def clinkupload():
     global warning
+    global username
+    global password
     global Boolwarning
     global log
     global report
@@ -829,15 +834,36 @@ def clinkupload():
     global clinkentry
     global biesclinkbutton
     global uploadlabel
+    global top
 
     if not boolclink:
-        uploadlabel(window, text="press Upload Clink button again to Upload").pack()
-        clinkentry = Entry(window)
+        def killpopup():
+            global clink
+            global username
+            global password
+            clink = clinkentry.get()
+            username = usrentry.get()
+            password = passentry.get()
+            top.destroy()
+
+        top = tk.Toplevel(window)
+        top.title("upload Clink Link")
+        this = Label(top, text="Upload Clink Link")
+        this.pack()
+        clinkentry = Entry(top)
         clinkentry.pack()
-        clink = clinkentry.get()
-        boolclink = True
+        this1 = Label(top, text="Upload Clink Username")
+        this1.pack()
+        usrentry = Entry(top)
+        usrentry.pack()
+        this2 = Label(top, text="Upload Clink Password")
+        this2.pack()
+        passentry = Entry(top)
+        passentry.pack()
+        submitclink = Button(top, text="Submit", command=partial(killpopup))
+        submitclink.pack()
+
     else:
-        clinkentry.destroy()
         bieschecker()
         clinkdis = Label(window, text="Clink url= " + clink)
         clinkdis.pack()
@@ -1140,6 +1166,7 @@ def exitbugs():
 def knownbugs():
     global bugwindow
     bugwindow = tk.Toplevel(window)
+    bugwindow.title("Known Bugs")
     Label(bugwindow, text="Below is a list of known bugs",  wraplength=599). grid(row=0, column=0)
     Label(bugwindow, text="Please email will.rogers@healthgrades.com if you find any more bugs or have a fix for some.", wraplength=599).grid(row=1, column=0)
     Label(bugwindow, text="• If you need to change the file you are uploading or change the QA, sometimes the text from the text from the previous upload or QA will  still display. if that happens, the program will still work and you just have to ignore the text or previous button.", wraplength=599, justify=LEFT, anchor=W).grid(row=2, column=0)
