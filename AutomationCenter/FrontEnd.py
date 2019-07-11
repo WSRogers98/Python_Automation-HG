@@ -841,9 +841,11 @@ def clinkupload():
             global clink
             global username
             global password
+            global boolclink
             clink = clinkentry.get()
             username = usrentry.get()
             password = passentry.get()
+            boolclink = True
             top.destroy()
 
         top = tk.Toplevel(window)
