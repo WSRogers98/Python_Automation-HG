@@ -2,6 +2,6 @@
 Files are located in the Automation Center fodler.
 
 This is for personal use only. do not copy or use for commercial gain.
-This program was intended for Healthgrades and can be used freely by any Healthgrades employee.
-This program contains no propriataty knowledge or Healthgrades exclusive rights therefore it is on this Github.
-This github upload will likely be left unfinished, because my internship requires me to do duties other than automation.
+Due to some automation scripts containing proprietarymmethods used by Healthgrades, some code and files have been omitted from this Github repository.
+
+This repository contains a GUI and some automation scripts that I created for the use of the Healthgrades quality assurance team to use in their DevOps process. these scripts automated several aspects of QA process such as proofreading, SEM marketing and webcrawling. 
